@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<rdf:RDF
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns="http://www.owl-ontologies.com/Literature.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xml:base="http://www.owl-ontologies.com/Literature.owl">
+    <owl:Ontology rdf:about=""/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- aCritique -->
+
+    <owl:ObjectProperty rdf:about="aCritique">
+        <rdfs:domain rdf:resource="Détracteur"/>
+        <rdfs:range rdf:resource="Oeuvre"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- aEcrit -->
+
+    <owl:ObjectProperty rdf:about="aEcrit">
+        <rdfs:domain rdf:resource="Auteur"/>
+        <rdfs:range rdf:resource="Oeuvre"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- aPublier -->
+
+    <owl:ObjectProperty rdf:about="aPublier">
+        <rdfs:domain rdf:resource="Editeur"/>
+        <rdfs:range rdf:resource="Oeuvre"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- estDeType -->
+
+    <owl:ObjectProperty rdf:about="estDeType">
+        <rdfs:domain rdf:resource="Oeuvre"/>
+        <rdfs:range rdf:resource="Declaratif"/>
+        <rdfs:range rdf:resource="Explicatif"/>
+        <rdfs:range rdf:resource="Naratif"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- CIN -->
+
+    <owl:DatatypeProperty rdf:about="CIN">
+        <rdfs:domain rdf:resource="Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchemastring"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- ISBN -->
+
+    <owl:DatatypeProperty rdf:about="ISBN">
+        <rdfs:domain rdf:resource="Oeuvre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchemaunsignedLong"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- Nom -->
+
+    <owl:DatatypeProperty rdf:about="Nom">
+        <rdfs:domain rdf:resource="Oeuvre"/>
+        <rdfs:domain rdf:resource="Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchemastring"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- pays -->
+
+    <owl:DatatypeProperty rdf:about="pays">
+        <rdfs:domain rdf:resource="Oeuvre"/>
+        <rdfs:domain rdf:resource="Personne"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchemastring"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- Argumentatif -->
+
+    <owl:Class rdf:about="Argumentatif">
+        <rdfs:subClassOf rdf:resource="Oeuvre"/>
+    </owl:Class>
+
+
+
+    <!-- Auteur -->
+
+    <owl:Class rdf:about="Auteur">
+        <rdfs:subClassOf rdf:resource="Personne"/>
+    </owl:Class>
+
+
+
+    <!-- Aventure -->
+
+    <owl:Class rdf:about="Aventure">
+        <rdfs:subClassOf rdf:resource="Roman"/>
+    </owl:Class>
+
+
+
+    <!-- Comedie -->
+
+    <owl:Class rdf:about="Comedie">
+        <rdfs:subClassOf rdf:resource="Theatre"/>
+    </owl:Class>
+
+
+
+    <!-- Declaratif -->
+
+    <owl:Class rdf:about="Declaratif">
+        <rdfs:subClassOf rdf:resource="Types"/>
+    </owl:Class>
+
+
+
+    <!-- Détracteur -->
+
+    <owl:Class rdf:about="Détracteur">
+        <rdfs:subClassOf rdf:resource="Personne"/>
+    </owl:Class>
+
+
+
+    <!-- Editeur -->
+
+    <owl:Class rdf:about="Editeur">
+        <rdfs:subClassOf rdf:resource="Personne"/>
+    </owl:Class>
+
+
+
+    <!-- Epope -->
+
+    <owl:Class rdf:about="Epope">
+        <rdfs:subClassOf rdf:resource="Poesie"/>
+    </owl:Class>
+
+
+
+    <!-- Essai -->
+
+    <owl:Class rdf:about="Essai">
+        <rdfs:subClassOf rdf:resource="Argumentatif"/>
+    </owl:Class>
+
+
+
+    <!-- Explicatif -->
+
+    <owl:Class rdf:about="Explicatif">
+        <rdfs:subClassOf rdf:resource="Types"/>
+    </owl:Class>
+
+
+
+    <!-- Naratif -->
+
+    <owl:Class rdf:about="Naratif">
+        <rdfs:subClassOf rdf:resource="Types"/>
+    </owl:Class>
+
+
+
+    <!-- Oeuvre -->
+
+    <owl:Class rdf:about="Oeuvre"/>
+
+
+
+    <!-- Personne -->
+
+    <owl:Class rdf:about="Personne"/>
+
+
+
+    <!-- Poeme -->
+
+    <owl:Class rdf:about="Poeme">
+        <rdfs:subClassOf rdf:resource="Poesie"/>
+    </owl:Class>
+
+
+
+    <!-- Poesie -->
+
+    <owl:Class rdf:about="Poesie">
+        <rdfs:subClassOf rdf:resource="Oeuvre"/>
+    </owl:Class>
+
+
+
+    <!-- Policier -->
+
+    <owl:Class rdf:about="Policier">
+        <rdfs:subClassOf rdf:resource="Roman"/>
+    </owl:Class>
+
+
+
+    <!-- Reflextion_Philosophique -->
+
+    <owl:Class rdf:about="Reflextion_Philosophique">
+        <rdfs:subClassOf rdf:resource="Argumentatif"/>
+    </owl:Class>
+
+
+
+    <!-- Roman -->
+
+    <owl:Class rdf:about="Roman">
+        <rdfs:subClassOf rdf:resource="Oeuvre"/>
+    </owl:Class>
+
+
+
+    <!-- Theatre -->
+
+    <owl:Class rdf:about="Theatre">
+        <rdfs:subClassOf rdf:resource="Oeuvre"/>
+    </owl:Class>
+
+
+
+    <!-- Tragédie -->
+
+    <owl:Class rdf:about="Tragédie">
+        <rdfs:subClassOf rdf:resource="Theatre"/>
+    </owl:Class>
+
+
+
+    <!-- Types -->
+
+    <owl:Class rdf:about="Types"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- Animal -->
+
+    <owl:NamedIndividual rdf:about="Animal">
+        <rdf:type rdf:resource="Essai"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">416153468</ISBN>
+        <Nom>Animal Farm</Nom>
+        <pays>Spain</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Arabic -->
+
+    <owl:NamedIndividual rdf:about="Arabic">
+        <rdf:type rdf:resource="Poeme"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">16543246532</ISBN>
+        <Nom>Ena Arabi</Nom>
+        <Nom>Palestine</Nom>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Firas -->
+
+    <owl:NamedIndividual rdf:about="Firas">
+        <rdf:type rdf:resource="Auteur"/>
+        <aEcrit rdf:resource="Arabic"/>
+        <aEcrit rdf:resource="Gilgamesh"/>
+        <aEcrit rdf:resource="Java_101"/>
+        <aEcrit rdf:resource="lotr_1"/>
+        <aEcrit rdf:resource="lotr_2"/>
+        <aEcrit rdf:resource="lotr_3"/>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">012456</CIN>
+        <Nom>Firas Gilanai</Nom>
+        <Nom>Turkey</Nom>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Gilgamesh -->
+
+    <owl:NamedIndividual rdf:about="Gilgamesh">
+        <rdf:type rdf:resource="Epope"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">1655432115</ISBN>
+        <Nom>The Epic of Gilgamesh</Nom>
+        <pays>Iraq</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Java_101 -->
+
+    <owl:NamedIndividual rdf:about="Java_101">
+        <rdf:type rdf:resource="Reflextion_Philosophique"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">4861324864</ISBN>
+        <Nom>Java 101</Nom>
+        <pays>Turkey</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Jihed -->
+
+    <owl:NamedIndividual rdf:about="Jihed">
+        <rdf:type rdf:resource="Editeur"/>
+        <aPublier rdf:resource="Animal"/>
+        <aPublier rdf:resource="Gilgamesh"/>
+        <aPublier rdf:resource="Odyssey"/>
+        <aPublier rdf:resource="lotr_1"/>
+        <aPublier rdf:resource="lotr_2"/>
+        <aPublier rdf:resource="lotr_3"/>
+        <aPublier rdf:resource="1983"/>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">0456831</CIN>
+        <Nom>Jihed Salah</Nom>
+        <pays>South Africa</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Odyssey -->
+
+    <owl:NamedIndividual rdf:about="Odyssey">
+        <rdf:type rdf:resource="Epope"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">4162168454621</ISBN>
+        <Nom>The Odyssey</Nom>
+        <pays>Greece</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Wael -->
+
+    <owl:NamedIndividual rdf:about="Wael">
+        <rdf:type rdf:resource="Détracteur"/>
+        <aCritique rdf:resource="Animal"/>
+        <aCritique rdf:resource="1983"/>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">0945156</CIN>
+        <Nom>Wael Darmoul</Nom>
+        <pays>Kenya</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Yassine -->
+
+    <owl:NamedIndividual rdf:about="Yassine">
+        <rdf:type rdf:resource="Auteur"/>
+        <aEcrit rdf:resource="Animal"/>
+        <aEcrit rdf:resource="Odyssey"/>
+        <aEcrit rdf:resource="1983"/>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">014655</CIN>
+        <Nom>Yassine Bouatay</Nom>
+        <pays>Madagascar</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- lotr_1 -->
+
+    <owl:NamedIndividual rdf:about="lotr_1">
+        <rdf:type rdf:resource="Aventure"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">165154316651336</ISBN>
+        <Nom>The Lord of The Rings 1</Nom>
+        <pays>UK</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- lotr_2 -->
+
+    <owl:NamedIndividual rdf:about="lotr_2">
+        <rdf:type rdf:resource="Aventure"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">1651543468313</ISBN>
+        <Nom>The Lord of The Rings 2</Nom>
+        <pays>UK</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- lotr_3 -->
+
+    <owl:NamedIndividual rdf:about="lotr_3">
+        <rdf:type rdf:resource="Aventure"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">16516543216832</ISBN>
+        <Nom>The Lord of The Rings 3</Nom>
+        <pays>UK</pays>
+    </owl:NamedIndividual>
+
+
+
+    <!-- 1983 -->
+
+    <owl:NamedIndividual rdf:about="1983">
+        <rdf:type rdf:resource="Reflextion_Philosophique"/>
+        <ISBN rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">46134876486219</ISBN>
+        <Nom rdf:datatype="http://www.w3.org/2001/XMLSchemainteger">1983</Nom>
+        <pays>Tunisia</pays>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
