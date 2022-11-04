@@ -1,0 +1,25 @@
+PREFIX ns: <http://www.owl-ontologies.com/>
+PREFIX pro: <http://www.owl-ontologies.com/Literature.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?nom ?isbn ?pays ?author ?editeur ?critique ?type
+WHERE {
+    ?o rdf:type ns:Roman.
+    ?o pro:Nom ?nom.
+    ?o pro:ISBN ?isbn.
+    ?o pro:pays ?pays.
+    ?a pro:aEcrit ?o.
+    ?a pro:Nom ?author.
+    OPTIONAL {  ?o pro:estDeType ?type }
+    OPTIONAL {
+        ?p pro:aPublier ?o.
+        ?p pro:Nom ?editeur
+    }
+    OPTIONAL {
+        ?c pro:aCritique ?o.
+        ?c pro:Nom ?critique
+    }
+}

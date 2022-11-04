@@ -8,10 +8,7 @@ import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
 import org.apache.jena.reasoner.rulesys.Rule;
 import org.apache.jena.util.FileManager;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.List;
 
 public class JenaEngine {
@@ -57,19 +54,10 @@ public class JenaEngine {
         Query query = QueryFactory.create(queryString);
         QueryExecution qe = QueryExecutionFactory.create(query, model);
         ResultSet results = qe.execSelect();
-        OutputStream output = new OutputStream() {
-            private StringBuilder string = new StringBuilder();
-
-            public void write(int b) throws IOException {
-                this.string.append((char) b);
-            }
-
-            public String toString() {
-                return this.string.toString();
-            }
-        };
-        ResultSetFormatter.out(output, results, query);
-        return output.toString();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        ResultSetFormatter.outputAsJSON(outputStream, results);
+        return new String(outputStream.toByteArray());
+//        return results.toString();
     }
 
     public static String executeQueryFile(Model model, String filepath) {
